@@ -2,13 +2,40 @@
 title: "Trading vs value investing"
 format: html
 author: "Ignacio Pavez"
+warning: False
 ---
 
+# Resumen 
 
-Existe una constante duda en el mercado financiero sobre los cual de los enfoques del análisis técnico y el fundamental (trading vs value investing), métodos que son clave a la hora de invertir dinero, al punto en que tanto académicos como profesionales no han podido encontrar una respuesta clara. Por una parte Benjamin Graham (Inversor, autor y profesor), conocido como el padre del "value investing", quien afirma que el trading es meramente especulativo, y a si vez que el value investing es una inversión, por otro lado, los méritos del trading son reconocidos por quienes lo practican llegando a ganar abismales sumas de dinero.
+# Introducción
+
+Existe una constante duda en el mercado financiero sobre cual de los enfoques es mejor entre análisis técnico y el fundamental (trading vs value investing), métodos que son clave a la hora de invertir dinero, al punto en que tanto académicos como profesionales no han podido encontrar una respuesta clara. Por una parte Benjamin Graham (Inversor, autor y profesor), conocido como el padre del "value investing", quien afirma que el trading es meramente especulativo, y a si vez que el value investing es una inversión, por otro lado, los méritos del trading son reconocidos por quienes lo practican llegando a ganar abismales sumas de dinero.
 
 Tanto Benjamin Graham como los traders (quienes practican el trading) tienen argumentos para creer que su punto de visto es el correcto, pero cual es la pregunta que ambos quieren responder ¿Es el trading mejor que el value investing o viceversa? ¿Cuál es más rentable?, ¿Existe la certeza de que, si funcionó ayer, también funcionara mañana? ¿Cómo podemos maximizar las ganancias en ambos casos? ¿Cuál es la clave de cada método?, ¿Son compatibles?. Responder estas preguntas nos entrega un punto de vista interesante, ya que se puede trazar una ruta inicial objetiva para ea través de la estadística, logrando un método base para lo que se conoce hoy en día como análisis bursátil.
 
-Con el objetivo de encontrar el mejor método para maximizar ganancias de manera eficiente Analizaremos los dos métodos, trading y value investing, con los factores que podrían ser clave para resolver las preguntas antes planteadas, con el fin de entender si algún método es mejor que otro, o compatibles. 
+Con el objetivo de encontrar el mejor método para maximizar ganancias de manera eficiente Analizaremos los dos métodos, trading y value investing, con los factores que podrían ser clave para resolver las preguntas antes planteadas, con el fin de entender si algún método es mejor que otro, o compatibles.
 
 Este trabajo estará divido en 4 distintas secciones: Primero se hará un análisis particular con los datos de distintos mercados financiero, tanto para el trading como para el value investing, sentando las bases y estructuras de cada método. Luego construiremos las estrategias que mejor se adapten para maximizar ganancias y eficiencia. Avanzaremos con puntos máximos y mínimos de entrada, así ahondando en el tema de que si conocemos los resultados el éxito está garantizado. Y antes de concluir haremos tres experimentos para cada mercado financiero, que se desarrollaran durante el transcurso del proyecto.
+
+# Desarrollo
+
+## Datos
+
+Las bases de datos fueron encontradas [Investing.com Español - Finanzas, Noticias y Bolsa de Valores](https://es.investing.com/) las cuales se hicieron distintas modificaciones, que corresponden a cambiar el tipo de la variable, entre estas están Fecha, Vol., Var
+
+| Variables | Tipo   | Descripción                                  |
+|-----------|--------|----------------------------------------------|
+| Fecha     | Date   | Fecha en que el instrumento fue tranzado     |
+| Último    | Number | Precio de cierre                             |
+| Apertura  | Number | Precio de inicio                             |
+| Máximo    | Number | Precio máximo alcanzado durante la sesión    |
+| Mínimo    | Number | Precio mínimo alcanzado durante la sesión    |
+| Variación | Number | Variacion entre el precio de inicio y cierre |
+
+```{r}
+
+```
+
+```{r}
+
+```
