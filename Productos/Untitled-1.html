@@ -2,19 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.2.247">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Ignacio Pavez">
 
-<title>Introducción reporte</title>
+<title>Trading vs value investing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
 
 
@@ -40,23 +46,31 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introducción reporte</h1>
+<h1 class="title">Trading vs value investing</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ignacio Pavez </p>
+          </div>
+  </div>
     
+  
     
   </div>
   
 
 </header>
 
-<p>Existe una constante duda en el mercado financiero, sobre los enfoques del análisis técnico y el fundamental (trading vs value investing), métodos que son clave a la hora de invertir dinero, al punto en que tanto académicos como profesionales no han podido encontrar una respuesta clara. Un ejemplo de esto es Benjamin Graham (Inversor, autor, y profesor), conocido como el padre del “value investing”, quien afirma que el trading es meramente especulativo, mientras que el value investing es una inversión, por otro lado, los méritos del trading son reconocidos por quienes lo practican llegando a ganar abismales sumas de dinero.</p>
-<p>Tanto Benjamin Graham como los traders (quienes practican el trading) tienen argumentos para creer que su punto de visto es el correcto, pero cual es la pregunta que ambos quieren responder, ¿Es el trading mejor que el value investing o viceversa?, ¿Cuál es más rentable?, ¿Existe la certeza de que, si funciono ayer, también funcionara mañana?, ¿Como podemos maximizar las ganancias en ambos casos?, ¿Cuál es la clave de cada método?, ¿Son compatibles?. Responder estas preguntas nos entrega un punto de vista interesante, ya que se puede trazar una ruta inicial objetiva a través de la estadística, logrando un método base para lo que se conoce hoy en día como análisis bursátil.</p>
-<p>Con el objetivo de encontrar el mejor método para maximizar ganancias de manera eficiente. Analizaremos los 2 métodos, trading y value investing, con los factores que podrían ser clave para resolver las preguntas antes planteadas, con el fin de entender si algún método es mejor que otro, o compatibles. Este trabajo estará divido en distintas secciones, primero se hará un análisis particular con los datos de distintos mercados financiero, tanto para el trading como para el value investing, sentando las bases y estructuras de cada método. Luego construiremos las estrategias que mejor se adapten para maximizar ganancias y eficiencia. Avanzaremos con puntos máximos y mínimos de entrada, así ahondando en el tema de que si conocemos los resultados el éxito está garantizado. Y antes de concluir haremos 3 experimentos para cada mercado financiero, que se desarrollaran durante el transcurso del proyecto. Y para terminar se concluirán los resultados obtenidos, junto con opiniones al respecto. El trabajo incluye conocimientos específicos de economía, estadística, y análisis bursátil.</p>
+<p>Existe una constante duda en el mercado financiero sobre los cual de los enfoques del análisis técnico y el fundamental (trading vs value investing), métodos que son clave a la hora de invertir dinero, al punto en que tanto académicos como profesionales no han podido encontrar una respuesta clara. Por una parte Benjamin Graham (Inversor, autor y profesor), conocido como el padre del “value investing”, quien afirma que el trading es meramente especulativo, y a si vez que el value investing es una inversión, por otro lado, los méritos del trading son reconocidos por quienes lo practican llegando a ganar abismales sumas de dinero.</p>
+<p>Tanto Benjamin Graham como los traders (quienes practican el trading) tienen argumentos para creer que su punto de visto es el correcto, pero cual es la pregunta que ambos quieren responder ¿Es el trading mejor que el value investing o viceversa? ¿Cuál es más rentable?, ¿Existe la certeza de que, si funcionó ayer, también funcionara mañana? ¿Cómo podemos maximizar las ganancias en ambos casos? ¿Cuál es la clave de cada método?, ¿Son compatibles?. Responder estas preguntas nos entrega un punto de vista interesante, ya que se puede trazar una ruta inicial objetiva para ea través de la estadística, logrando un método base para lo que se conoce hoy en día como análisis bursátil.</p>
+<p>Con el objetivo de encontrar el mejor método para maximizar ganancias de manera eficiente Analizaremos los dos métodos, trading y value investing, con los factores que podrían ser clave para resolver las preguntas antes planteadas, con el fin de entender si algún método es mejor que otro, o compatibles.</p>
+<p>Este trabajo estará divido en 4 distintas secciones: Primero se hará un análisis particular con los datos de distintos mercados financiero, tanto para el trading como para el value investing, sentando las bases y estructuras de cada método. Luego construiremos las estrategias que mejor se adapten para maximizar ganancias y eficiencia. Avanzaremos con puntos máximos y mínimos de entrada, así ahondando en el tema de que si conocemos los resultados el éxito está garantizado. Y antes de concluir haremos tres experimentos para cada mercado financiero, que se desarrollaran durante el transcurso del proyecto.</p>
 
 </main>
 <!-- /main column -->
@@ -78,7 +92,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     if (bsSheetEl) {
       toggleBodyColorMode(bsSheetEl);
     }
-  }s
+  }
   toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
@@ -101,7 +115,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -129,31 +160,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
