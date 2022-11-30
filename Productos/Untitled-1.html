@@ -21,69 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -132,6 +69,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="resumen" class="level1">
 <h1>Resumen</h1>
+<p>En los últimos 10 años ha existido la constante discusión sobre la efectividad del trading sobre el value investing, provocando sin cesar una duda de cual es más rentable y segura. Así con la finalidad de aproximarnos a una posible respuesta analizamos dos bases de datos de 2 diferentes divisas, EUR/JPY y GBP/USD, que contienen los precios de apertura y cierre del mercado, junto a sus máximos y mínimos correspondientes, la fecha y su porcentaje de variación. Los resultados obtenidos dieron pie a concluir que si bien en el trading existe mayor probabilidad de obtener una rentabilidad superior, a su vez existe un riesgo asociado mucho más alto que en el value investing. En consecuencia podemos creer que dependiendo del perfil del inversionista es viable elegir tanto una opción como la otra, y en algunos casos las dos.</p>
 </section>
 <section id="introducción" class="level1">
 <h1>Introducción</h1>
@@ -144,18 +82,135 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Desarrollo</h1>
 <section id="datos" class="level2">
 <h2 class="anchored" data-anchor-id="datos">Datos</h2>
-<p>Las bases de datos fueron encontradas <a href="https://es.investing.com/">Investing.com Español - Finanzas, Noticias y Bolsa de Valores</a> las cuales se encontraban en buen estado por lo que no tuvieron que ser modificadas.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-
+<p>Las bases de datos fueron encontradas <a href="https://es.investing.com/">Investing.com Español - Finanzas, Noticias y Bolsa de Valores</a> las cuales se hicieron distintas modificaciones, que corresponden a cambiar el tipo de la variable, entre estas están Fecha, Vol., Var, y ajustar las variables tipo Number por un ponderador debido a la mal lectura del archivo. Así se presentan las variables en la tabla a continuación</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Variables</th>
+<th>Tipo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fecha</td>
+<td>Date</td>
+<td>Fecha en que el instrumento fue tranzado</td>
+</tr>
+<tr class="even">
+<td>Último</td>
+<td>Number</td>
+<td>Precio de cierre</td>
+</tr>
+<tr class="odd">
+<td>Apertura</td>
+<td>Number</td>
+<td>Precio de inicio</td>
+</tr>
+<tr class="even">
+<td>Máximo</td>
+<td>Number</td>
+<td>Precio máximo alcanzado durante la sesión</td>
+</tr>
+<tr class="odd">
+<td>Mínimo</td>
+<td>Number</td>
+<td>Precio mínimo alcanzado durante la sesión</td>
+</tr>
+<tr class="even">
+<td>Variación</td>
+<td>Number</td>
+<td>Variacion entre el precio de inicio y cierre</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="resultados" class="level1">
+<h1>Resultados</h1>
+<p>A continuación podremos observar los resultados obtenidos a través de gráficos y distintos ejercicios para entender la manera de obtener los beneficios máximos, junto con beneficios más “reales”. Cada proyección estará hecha con las dos divisas antes mencionadas para tratar de evitar ciertos sesgos relacionados.</p>
+<p>Para iniciar analizamos la máxima ganancia posible en ambas dicisas como se puede observar en el grafico 1 y 2</p>
+<section id="gráfico-1" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-1">Gráfico 1</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAXeur.png" class="img-fluid figure-img" alt="algo"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
 </div>
 </section>
+<section id="gráfico-2" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-2">Gráfico 2</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/MAXgbp.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
+</div>
+<p>Al analizar estos resultados podemos darnos cuenta de que no existe forma real en alcanzar estos resultados, que fueron dado por el hecho de conocer los mínimos y máximos con anterioridad, pero nos sirve para lograr obtener una cota para los resultados.</p>
+<p>Podemos notar con más detalle cierta sutileza en la comparación de estos gráficos en donde el primero alcanza una rentabilidad varias veces mejor que el segundo, esto es debido a que comparamos dos economías distintas, la de la unión europea versus la japonesa, es decir, el euro versus el yen japonés, y por otra parte comparamos economias como la inglesa versus la estadounidense, es decir, la libra esterlina versus el dólar americano. Con el contexto podemos entender como se relacionan los pares de divisas, si la economía, politica, y aspectos sociales son mejor en algún país esto repercutira de manera directa en el precio del par de la divisa. Esto genera una volatilidad que es lo que nos permite rentabilizar, como antes mencionamos este gráfico es lo más perfecto que se pudo operar en el mercado, ya que se centro en comprar en puntos mínimos y vender en puntos máximos con 100% de exito, si bien esto nos lleva a una restricción que es una operación por día, se aplicara para los siguientes graficos de igual manera.</p>
+<p>Los ultimos detalles del gráfico nos dan apreciar que el par está acotado por las fechas 2012-2022</p>
+<p>A continuación veremos los gráficos 3 y 4 que consisten en el primer aspecto a tratar, el trading. Para esto se considero una estrategia simple de medias moviles exponenciales(EMA) de 50 y 200 periódos. La estrategia consiste en el momento en que la EMA de menos periódos cruce la otra, imponer una compra o venta para rentabilizar</p>
+</section>
+<section id="gráfico-3" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-3">Gráfico 3</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/emaeur.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="gráfico-4" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-4">Gráfico 4</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/emagbp.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
+</div>
+<p>Como se puede observar a simple vista la cantidad de cruces no es muy alta y por lo tanto no disponemos de muchas operaciones, con certeza se puede dar a conocer que cada cruce implica acertar en la operación, esto es debido a que la estrategia se basa en cambios de tendencia. Los cambios de tendencia se dan cuando el precio alcista se convierte en bajiste o viceversa, de esta manera podemos asegurar operaciones cada ciertos años con una probabilidad de acierto cercana al 100%.</p>
+<p>Las compras o ventas se mantienen hasta que exista otro cruce lo que nos deja una viabilidad alta en la estrategia, debido a una particularidad del mercado que se llama fractalidad. La fractalidad nos permite transformar periódos diarios en periódos de horas o minutos, por lo que mientras llevamos acabo estas largas operaciones podemos hacer “mini operaciones” durante el día llamado tranding intradía.</p>
+<p>Otra de las ventajas absolutas que se pueden ver es que no tenemos restricciones a la hora de si el precio sube o baja, en ambos casos se puede generar una sustanciosa rentabilidad y de esta manera no limitarnos a la compra.</p>
+<p>Como se puede comparar en los dos pares de divisas las EMA son muy simples de ver, esto quiere decir que los cruces no requieren una habilidad innata para apreciarlos y estos dejan una sustanciosa rentabilidad. Al ser una herramienta visual tiene una única desventaja demanda un tiempo mayor sobre la persona que quiera utilizar este método y una paciencia más grande que el promedio por los largos tiempo de espera.</p>
+<p>Sin duda los hechos lo verifican y cualquier persona se puede dedicar al trading siendo consistente con la estrategia, lo que nos deja a responder algunas dudas en cuestión. Es realmente especulación?, bueno si nos ponemos a pensar no existe nada que indique lo contrario, ya que no se necesitan grandes conocimientos financieros para entender la estrategia, pero como antes mencionado la palabra clave es esa “estrategia”, al haber un desarrollo lógico detrás podemos decir con claridad, no es especulación</p>
+<p>Dentro de los últimos dos gráficos podemos ver como se comporta el dollar cost avareging (promediar), método proclamado por Graham si es que no se tiene mucha consiencia sobre los mercados financieros. En los gráficos 5 y 6 veremos los dos lados de la moneda, unas ganancias consistentemente altas, pero tambien unas pérdidas exageradamente pronunciadas</p>
+</section>
+<section id="grafico-5" class="level3">
+<h3 class="anchored" data-anchor-id="grafico-5">Grafico 5</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dcaeur.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="gráfico-6" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico-6">Gráfico 6</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/dcagbp.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Fuente: Elaboración propia a partir de los datos en investing.com</figcaption><p></p>
+</figure>
+</div>
+<p>En estos dos ultimos gráficos podemos ver como claramente existen dos versiones opuestas, una rentabilidad sustanciosa y un perdida exagerada. El método en si es consistentes para todo tipo de activos, pero hay que tener cuidado a la hora de comparar divisas, ya que el par inverso podria resultar sustanciosamente más fuerte, ej: GBPUSD -&gt; USDGBP, ya que como este método se centra en la compra a cualquier precio con tal de promediar los costes, cuando existen caidas de la magnitud como en 2022, nos damos cuenta de que existe una restricción que nos puede generar muchas pérdidas.</p>
+<p>El método consiste en nada más que promediar a medida que pasan los dias y así obtener un precio preferente estable, como se ve en el gráfico 5 es sin duda una forma de rentabilizar de manera muy tangible. Cabe decir que existen más detalles de este método, pero como estrategia de un inversor defensivo, es decir, no usa de su tiempo para invertir, es sin duda mejor que la del trading.</p>
+<p>El value investing también abarca otros factores como: la politica del país, economía y otros factores incidentes, pero en este informe no los contemplaremos debido a su complejidad.</p>
+<p>Con respecto a la información entregada anteriormente podemos entender que ambos métodos son rentables, sin embargo existe una diferencia crucial a la hora de optar por ellos, el tiempo definitivamente es clave a la hora de elegir cual estrategia es mejor, por lo que se puede ultimar es las estrategias son dependientes totalmente del factor tiempo</p>
+</section>
+</section>
+<section id="conclusión" class="level1">
+<h1>Conclusión</h1>
+<p>Como se dio a entender durante el desarrollo del reporte, ambas estrategias tienen sus aspectos positivos y negativos, que a su vez nos dan a dislumbrar ciertas respuestas a dudas que podriamos tener, ambas estrategias son de caracter no-especulativas a un nivel de inversión básico, es decir, no profesional, ya que si abarcamos este ambito podriamos decir incluso que tanto trading como value investing serián especulativas.</p>
+<p>Frente a los innegables resultados el trading es la opción más rentable a comparar tanto por su facilidad como por su acierto, sin embargo el value investing abre las puertas a distintas posibilidades, debido a que en mercados inflacionarios (alcistas) podemos sin lugar a dudas optar con total seguridad por esta opción,</p>
+<p>Para finalizar cabe resaltar que sin importar el método las ganancias máximas estan muy alejadas de la realidad, por lo tanto no sirve para más que iluminar un camino que quiere alcanzar la mejor estrategia, pero nunca llegara a encontrar debido a su carácteristica útopica</p>
+</section>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
+<ul>
+<li><p>www.investing.com</p></li>
+<li><p>El inversor inteligente, Benjamin Graham</p></li>
+</ul>
 </section>
 
 </main>
