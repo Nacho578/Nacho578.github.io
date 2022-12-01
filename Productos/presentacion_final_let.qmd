@@ -1,9 +1,11 @@
 ---
 title: "Trading X Value investing"
 author: "Ignacio Pavez"
-format: revealjs
+format: 
+  revealjs:
+    backgroundcolor: "aquamarine"
+    theme: estilo-documento.scss
 editor: visual
-backgroundcolor: "aquamarine"
 warning: False
 echo: True
 ---
@@ -14,7 +16,7 @@ echo: True
 
 ## Trading
 
-Consiste en la compra y venta de activos que cotizan en algún mercado![](images/trading.png)
+Consiste en la compra y venta de activos que cotizan en algún mercado.![](images/trading.png)
 
 ## Trading
 
