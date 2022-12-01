@@ -1,0 +1,130 @@
+---
+title: "Trading X Value investing"
+author: "Ignacio Pavez"
+format: revealjs
+editor: visual
+backgroundcolor: "aquamarine"
+warning: False
+echo: True
+---
+
+## Nos haremos millonarios?
+
+![](images/Pato%20lucas%20millonario.png)
+
+## Trading
+
+Consiste en la compra y venta de activos que cotizan en algún mercado![](images/trading.png)
+
+## Trading
+
+### Análisis técnico:
+
+-   **Indicadores**
+
+    ![](images/indicadores.png)
+
+## Trading
+
+### Análisis técnico:
+
+-   **Indicadores: SMA**
+
+    ```{r}
+    library("zoo")
+    sma <- function(x,n){
+      rollmean(x, n, fill = NA, align = "right")
+    }
+
+    ```
+
+## Trading
+
+### Análisis técnico:
+
+-   **Indicadores:** SMA, **EMA**
+
+    ```{r}
+    library("pracma")
+    EMA <- function(x, nn){
+      movavg(x, n = nn, type = "e")
+    }
+
+    ```
+
+## Trading
+
+### Análisis técnico:
+
+-   Indicadores: SMA, EMA
+
+-   **Estrategia**
+
+## Trading
+
+### Análisis técnico:
+
+-   Indicadores: SMA, EMA, RSI
+
+-   **Estrategia:** Metodología para llevar acabo operaciones
+
+## Value Investing:
+
+![](images/Dollar-Cost-Averaging.png)
+
+## Datos:
+
+::: r-fit-text
+**Contexto:** Los datos fueron obtenidos de la pagina www.investing.com y corresponden a dos pares de divisas EUR/JPY, GBP/USD tranzadas en el mercado FOREX, o también llamado mercado de divisas
+:::
+
+![](images/investing%20divisas.png){width="1061"}
+
+## Datos:
+
+**Descripción:**
+
+::: r-fit-text
+| Variables | Tipo   | Descripción                               |
+|-----------|--------|-------------------------------------------|
+| Fecha     | Date   | Fecha del periódo                         |
+| Último    | Number | Precio de cierre                          |
+| Apertura  | Number | Precio de inicio                          |
+| Máximo    | Number | Precio máximo alcanzado durante la sesión |
+| Mínimo    | Number | Precio mínimo alcanzado durante la sesión |
+| Variación | Number | Variacion en el precio de inicio y cierre |
+:::
+
+## Objetivo:
+
+Se quiere entender bajo que contexto el trading o el value investing será el mejor en terminos de tiempo, rentabilidad, y usabilidad.
+
+Para lo que a continuación veremos los siguientes gráficos obtenidos del desarrollo de los datos, que nos entregara ciertos matices para responder estos puntos
+
+## Figura 1
+
+![](images/MAXeur-01.png)
+
+## Figura 2
+
+![](images/MAXgbp-01.png)
+
+## Figura 3
+
+![](images/emaeur-01.png)
+
+## Figura 4
+
+![](images/emagbp-01.png)
+
+## Figura 5
+
+![](images/dcaeur-01.png)
+
+## Figura 6
+
+![](images/dcagbp-01.png)
+
+## Conclusión
+
+Como pudimos apreciar el los gráficos anteriores los dos métodos pueden llegar a ser igual de efectivas, pero su diferencia yace en el tiempo en que se incurre para aplicarlas![](images/Captura%20de%20pantalla%202022-12-01%20113910.png)
